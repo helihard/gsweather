@@ -42,25 +42,25 @@ maxTemps.forEach(entry => {
   printData(entry);
 });
 
-datetimeBtn.addEventListener("click", function () {
+dateBtn.addEventListener("click", function () {
   container.innerText = "";
   let maxTempsWithTime = calcMaxWithTime(thisYearsData);
 
   maxTempsWithTime.forEach(entry => {
     printDataWithTime(entry);
   });
-  datetimeBtn.style.display = "none";
-  clockIcon.style.display = "none";
-  dateBtn.style.display = "inline-block";
+  datetimeBtn.style.display = "inline-block";
+  clockIcon.style.display = "inline-block";
+  dateBtn.style.display = "none";
 });
 
-dateBtn.addEventListener("click", function () {
+datetimeBtn.addEventListener("click", function () {
   container.innerText = "";
 
   maxTemps.forEach(entry => {
     printData(entry);
   });
-  dateBtn.style.display = "none";
-  datetimeBtn.style.display = "inline-block";
-  clockIcon.style.display = "inline-block";
+  dateBtn.style.display = "inline-block";
+  datetimeBtn.style.display = "none";
+  clockIcon.style.display = "none";
 });
