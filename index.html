@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Vädret på Gotska Sandön 2024</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="android-chrome-192x192.png">
+    <link href="styles.css" rel="stylesheet" />
+    <link href="text-styles.css" rel="stylesheet" />
+    <script src="script.js" type="module" defer></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Vädret på Gotska Sandön 2024</h1>
+        <p>högsta temperatur/dygn</p>
+      </header>
+      <p id="latest-update"></p>
+      <p id="about-anchor">Baserad på data från <a href="https://www.smhi.se/" target="_blank">SMHI</a>.<br><a href="#about">Mer information om använd data 
+      </a><br>
+      <p id="sort-div">Sortera på <button id="sort-btn"></button><i class="fa-solid fa-arrows-up-down"></i> Visa <button id="datetime-btn">datum och tid</button><button id="date-btn" style="display:none;">endast datum</button><i class="fa-regular fa-calendar-days"></i><i class="fa-regular fa-clock" id="clock-icon"></i></p>
+      
+      <div id="blanket"></div>
+      <div id="about">
+        <p>
+          Datan är hämtad från
+          <a href="https://opendata.smhi.se/apidocs/metobs/" target="_blank"
+            >SMHI Open Data API Docs - Meteorological Observations</a
+          >.<br />Delad och bearbetad enligt
+          <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"
+            >Creative Commons-licens CC BY 4.0</a
+          >. Applikationen är avsedd för privat bruk.
+        </p>
+        <p>
+          <strong>Ursprunglig data:</strong> lufttemperatur, celsius, momentanvärde, 1
+          gång/timme, från SMHI:s officiella mätstation Gotska Sandön A.
+        </p>
+        <p>
+          Hämtad data är inte granskad av SMHI. För rättade och
+          kvalitetskontrollerade historiska data, se
+          <a
+            href="https://www.smhi.se/data/meteorologi/ladda-ner-meteorologiska-observationer#stations=core,param=airtemperatureInstant,stationid=89230"
+            target="_blank"
+            >SMHI:s observationsdata</a
+          >.
+        </p>
+        <p>
+          <strong>Bearbetning:</strong> Urvalet har begränsats till data från 2024 och till
+          högsta noterade temperatur/dygn. Bearbetningen gjord av
+          <a href="https://github.com/helihard" target="_blank"
+            >Emprex Enbyte</a
+          >
+          2024.
+        </p>
+        <div>
+          <strong>Bakgrund:</strong> För ett privat projekt behövde jag kunna få väderdata från Gotska Sandön A nästkommande dag. 
+          <p>Jag märkte snart att SMHI:s tjänst
+          <a
+            href="https://www.smhi.se/klimat/klimatet-da-och-nu/hur-var-vadret/q/Gotska%20Sand%C3%B6n/"
+            target="_blank"
+            ><i>Hur var vädret?</i></a
+          >
+          ibland släpade efter i rapporteringen, att data ibland saknades och
+          att data i tjänsten skilde sig, ibland markant, från stationens
+          direktrapporterade data (tillgängliga i översikt via tjänsten
+          <a
+            href="https://www.smhi.se/vader/observationer/mina-observationer-wow"
+            target="_blank"
+            ><i>Mina observationer – WOW</i></a
+          >). </p>
+          <p><i>Mina observationer – WOW</i> kommer att tas bort från SMHI i maj 2024. Tjänsten <a href="https://wow.metoffice.gov.uk/" target="_blank""><i>MetOffice WOW – Weather Observations Website</i></a> fann jag vara, till skillnad från SMHI:s WOW-tjänst, användarovänlig. </p>
+          <p>Att ladda ner stationens direktrapporterade – det vill säga inte granskade av SMHI – data i csv-format (tillgängliga på <a href="https://www.smhi.se/data/meteorologi/ladda-ner-meteorologiska-observationer#stations=core,param=airtemperatureInstant,stationid=89230" target="_blank"><i>SMHI – Ladda ner meteorologiska observationer</i></a>) var ett alternativ. Det krävde dock dagliga nedladdningar av filer och bearbetning av data – omvandling från UTC till CET/CEST-tid med mera –, och data i filerna var svåröverskådliga.</p>
+<p>Att skapa en webbapplikation för bearbetning och presentation av väderstationens direktrapporterade data med SMHI:s REST API var det mest effektiva alternativet. Applikationen är byggd med HTML, CSS, vanilla JavaScript och API.</p>
+        </div>
+      </div>
+      <!-- end "about" -->
+    </div>
+    <!-- end "wrapper" -->
+  </body>
+</html>
