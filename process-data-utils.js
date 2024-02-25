@@ -8,7 +8,7 @@ export function formatTimestamp(timestamp, timeZone) {
     day: "numeric",
     hour: "2-digit",
     minute: "numeric",
-    second: "numeric",
+    //second: "numeric",
     hour12: false
   };
   return new Intl.DateTimeFormat("sv-SE", formats).format(date);
