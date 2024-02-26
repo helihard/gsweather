@@ -1,6 +1,6 @@
 import { getColour } from "./process-data-utils.js";
 
-const container = document.querySelector("#blanket");
+const container = document.querySelector("main");
 
 export function printData(data) {
   let dataDiv = document.createElement("div");
